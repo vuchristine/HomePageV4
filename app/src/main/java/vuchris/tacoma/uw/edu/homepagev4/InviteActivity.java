@@ -18,17 +18,21 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 
+/**
+ * Creates the invite for app to send to people.
+ */
 public class InviteActivity extends AppCompatActivity {
 
-    //variables
+    //final string variables for the invite
     private static final
     String INVITATION_TITLE = "Call your friends",
             INVITATION_MESSAGE = "Hey! Want to invite your friends for this \"awesome\" app? :)",
             INVITATION_CALL_TO_ACTION = "Share";
 
-    //invite button
+    //button variable for invite
     Button button;
 
+    //random number for request invite
     public static final int REQUEST_INVITE = 12;
 
     @Override
@@ -62,7 +66,7 @@ public class InviteActivity extends AppCompatActivity {
             }
         });
 
-        //the following methods is for deep linking
+        //the following methods is for deep linking aka when the user accepts the invite
         //create a new intent to send message
         Intent intent = new AppInviteInvitation.IntentBuilder(INVITATION_TITLE)
                 .setMessage(INVITATION_MESSAGE)

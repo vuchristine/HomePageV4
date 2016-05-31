@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * Class displaying the login page.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -13,16 +16,25 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-    //when user clicks the button, signin or register dialog pops up
+    /**
+     * Launch the dialog fragments when user clicks on one of the buttons.
+     * @param v view for the user to see
+     */
     public void launch(View v) {
+
+        //create dialog fragment
         DialogFragment fragment = null;
+
+        //if the user click on sign in button
         if (v.getId() == R.id.signin_button) {
             fragment = new SignInFragment();
-        } else if (v.getId() == R.id.register_button) {
+        }
+        //if the user click on the register button
+        else if (v.getId() == R.id.register_button) {
             fragment = new RegisterFragment();
         }
 
-        //show
+        //show the fragment when it's not empty
         if (fragment != null) {
             fragment.show(getSupportFragmentManager(), "launch");
         }

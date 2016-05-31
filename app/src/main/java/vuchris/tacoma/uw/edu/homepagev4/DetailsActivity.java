@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import com.google.android.gms.appinvite.AppInviteReferral;
 
+/**
+ * Class displays the invite after user want to send invite to people.
+ */
 public class DetailsActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +19,9 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
     }
 
+    /**
+     * Check to see if the user accepts invite.
+     */
     @Override
     protected void onStart() {
         super.onStart();

@@ -6,12 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * Class displaying the home page.
+ */
 public class HomePageActivity extends AppCompatActivity {
 
-    /**
-     *
-     * @param savedInstanceState
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,23 +18,30 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param v
+     * Displays buttons for the user to click on.
+     * @param v the view for user to see the class's layout
      */
-    //when user clicks the button, signin or register dialog pops up
     public void launch(View v) {
+
+        //create dialog fragment
         DialogFragment fragment = null;
+
+        //if the user click on instructions button
         if (v.getId() == R.id.instructions) {
             fragment = new InstructionsFragment();
-        } else if (v.getId() == R.id.game) {
+        }
+        //if the user click on game button
+        else if (v.getId() == R.id.game) {
             Intent gameIntent = new Intent(this, GameActivity.class);
             startActivity(gameIntent);
-        } else if (v.getId() == R.id.invite) {
+        }
+        //if user click on invite button
+        else if (v.getId() == R.id.invite) {
             Intent inviteIntent = new Intent(this, InviteActivity.class);
             startActivity(inviteIntent);
         }
 
-        //show
+        //show fragment when it's not empty
         if (fragment != null) {
             fragment.show(getSupportFragmentManager(), "launch");
         }

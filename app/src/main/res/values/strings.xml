@@ -10,6 +10,7 @@
     <string name="cancel">Cancel</string>
     <string name="launch_signin_dialog">Sign In</string>
     <string name="launch_register_dialog">Register</string>
+    <string name="emailValidate">Not a valid email address.</string>
 
     <string name="title_activity_home_page">Home Page</string>
 
