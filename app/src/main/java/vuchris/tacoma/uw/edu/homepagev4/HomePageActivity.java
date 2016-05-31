@@ -1,0 +1,43 @@
+package vuchris.tacoma.uw.edu.homepagev4;
+
+import android.content.Intent;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+public class HomePageActivity extends AppCompatActivity {
+
+    /**
+     *
+     * @param savedInstanceState
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home_page);
+    }
+
+    /**
+     *
+     * @param v
+     */
+    //when user clicks the button, signin or register dialog pops up
+    public void launch(View v) {
+        DialogFragment fragment = null;
+        if (v.getId() == R.id.instructions) {
+            fragment = new InstructionsFragment();
+        } else if (v.getId() == R.id.game) {
+            Intent gameIntent = new Intent(this, GameActivity.class);
+            startActivity(gameIntent);
+        } else if (v.getId() == R.id.invite) {
+            Intent inviteIntent = new Intent(this, InviteActivity.class);
+            startActivity(inviteIntent);
+        }
+
+        //show
+        if (fragment != null) {
+            fragment.show(getSupportFragmentManager(), "launch");
+        }
+    }
+}

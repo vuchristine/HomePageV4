@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "841186383056",
+    "project_id": "homepagev4-app-invite---test"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841186383056:android:a4f3b5021f7bcd14",
+        "android_client_info": {
+          "package_name": "vuchris.tacoma.uw.edu.homepagev4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841186383056-kj9bumv83maq5u2ct7n9i4ua9mikuf9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vuchris.tacoma.uw.edu.homepagev4",
+            "certificate_hash": "AD56BA1FC69C459A2898989755BA9ED13166616C"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtxpKr9u9uhhFW5RbMi8V3ghs-bryminY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
