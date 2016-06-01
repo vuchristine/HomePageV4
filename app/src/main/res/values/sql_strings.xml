@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="CREATE_USER_SQL">
+        CREATE TABLE IF NOT EXISTS User
+        (id INTEGER PRIMARY KEY AUTOINCREMENT,
+        email TEXT,
+        username TEXT,
+        password TEXT,
+        score INTEGER)
+    </string>
+
+    <string name="DROP_USER_SQL">
+        DROP TABLE IF EXISTS User
+    </string>
+</resources>

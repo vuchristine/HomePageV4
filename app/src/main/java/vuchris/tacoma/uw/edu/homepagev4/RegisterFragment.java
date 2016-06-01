@@ -5,9 +5,9 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 
 /**
@@ -16,6 +16,10 @@ import android.widget.EditText;
 public class RegisterFragment extends DialogFragment {
 
     private final static String COURSE_ADD_URL = "http://cssgate.insttech.washington.edu/~vuchris/addCourse.php?";
+
+    private EditText emailValidate;
+    private EditText userValidate;
+    private EditText passwordValidate;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -26,16 +30,16 @@ public class RegisterFragment extends DialogFragment {
      * @param savedInstanceState
      * @return the alert dialog builder
      */
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+    public Dialog onCreateDialog(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
 
         //build alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         // Get the layout inflater
-        LayoutInflater inflater = getActivity().getLayoutInflater();
+        //LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        View v = inflater.inflate(R.layout.fragment_register, container, false);
+        final View v = inflater.inflate(R.layout.fragment_register, container, false);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
@@ -45,10 +49,10 @@ public class RegisterFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
-                        EditText emailValidate = (EditText)findViewById(R.id.email);
-                        EditText userValidate = (EditText)findViewById(R.id.username);
-                        EditText passwordValidate = (EditText)findViewById(R.id.password);
-                        EditText confirmValidate = (EditText)findViewById(R.id.confirm);
+                        /*
+                        emailValidate = (EditText)v.findViewById(R.id.email);
+                        userValidate = (EditText)v.findViewById(R.id.username);
+                        passwordValidate = (EditText)v.findViewById(R.id.password);
 
                         //string for helping validate email
                         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -81,8 +85,8 @@ public class RegisterFragment extends DialogFragment {
                             //add the password
 
                             //insert a new row into the table User
-                            insert = UserCommands.insert(emailValidate, userValidate, passwordValidate);
                         }
+                        */
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
