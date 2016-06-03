@@ -22,12 +22,15 @@ public class SignInFragment extends DialogFragment {
 
     /**
      * Creates a dialog for user to login their account.
-     * @param savedInstanceState
-     * @return
+     * @param savedInstanceState bundle
+     * @return dialog
      */
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        //create dialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
 

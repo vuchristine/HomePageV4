@@ -46,10 +46,10 @@ public class UserDB {
 
         /**
          * Contains variables for creating and dropping tables.
-         * @param context
-         * @param name
-         * @param factory
-         * @param version
+         * @param context context
+         * @param name name of string
+         * @param factory cursor factory
+         * @param version the databas's version
          */
         public UserDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
             super(context, name, factory, version);
@@ -70,7 +70,6 @@ public class UserDB {
 
             //create table
             db.execSQL(CREATE_USER_SQL);
-
         }
 
         /**
@@ -92,24 +91,29 @@ public class UserDB {
 
     /**
      * Insert a new row into the sqlite table.
-     * @param email the user's email
-     * @param username the user's chosen name to display
-     * @param password the user's password
-     * @param score the user's score from the game
+     * @param user User table
      * @return true if insert is successful, false otherwise
      */
-    public boolean insertUser(String email, String username, String password, int score) {
+    public boolean insertUser(User user) {
 
+        //open connection
+        SQLiteDatabase db = mUserDBHelper.getWritableDatabase();
+
+        //get new content values
         ContentValues contentValues = new ContentValues();
 
-        //contentValues.put(String.valueOf(1), id);
-        contentValues.put("email", email);
-        contentValues.put("username", username);
-        contentValues.put("password", password);
-        contentValues.put(String.valueOf(0), score);
+        //insert these new values
+        contentValues.put(User.USERID, user.userID);
+        contentValues.put(User.EMAIL, user.email);
+        contentValues.put(User.USERNAME, user.username);
+        contentValues.put(User.PASSWORD, user.password);
+        contentValues.put(String.valueOf(User.SCORE), user.score);
 
         //create user id
-        long userID = mSQLiteDatabase.insert("User", null, contentValues);
+        long userID = mSQLiteDatabase.insert(User.TABLE, null, contentValues);
+
+        //close connection
+        db.close();
 
         //return true
         return userID != -1;

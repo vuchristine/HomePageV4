@@ -9,14 +9,14 @@ public class User {
     public static final String TABLE = "Users";
 
     //column names
-    public static final int USERID = 0;
+    public static final String USERID = "id";
     public static final String EMAIL = "email";
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final int SCORE = 0;
 
     //variables to keep data
-    public int userID;
+    public String userID;
     public String email;
     public String username;
     public String password;
@@ -30,7 +30,7 @@ public class User {
      * @param password user's password
      * @param score user's score
      */
-    public User(int userID, String email, String username, String password, int score) {
+    public User(String userID, String email, String username, String password, int score) {
         this.userID = userID;
         this.email = email;
         this.username = username;
@@ -42,7 +42,7 @@ public class User {
      * Get the user id.
      * @return user id
      */
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
@@ -50,7 +50,7 @@ public class User {
      * Set the user's id.
      * @param userID unique id assigned to each user
      */
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
