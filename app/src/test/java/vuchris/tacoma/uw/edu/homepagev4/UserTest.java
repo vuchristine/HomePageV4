@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Class tests the User for validation.
+ * Class tests User for validation.
  */
 public class UserTest extends TestCase{
 
@@ -14,18 +14,7 @@ public class UserTest extends TestCase{
 
     @Before
     public void setUp() {
-        mUser = new User(21, "fake@mail.com", "FakeUser", "securethis", 43);
-    }
-
-    @Test
-    public void testSetNegativeUserID() {
-        try {
-            mUser.setUserID(-4);
-            fail("User ID can be set to be less than 0");
-        }
-        catch (IllegalArgumentException e) {
-            //
-        }
+        mUser = new User("1", "fake@mail.com", "FakeUser", "securethis", 43);
     }
 
     @Test
@@ -105,7 +94,7 @@ public class UserTest extends TestCase{
 
     @Test
     public  void testConstructor() {
-        User User = new User(34, "LoversBlame@email.com", "Cl0udyDay", "TCSS360", 69);
+        User User = new User("1", "LoversBlame@email.com", "Cl0udyDay", "TCSS360", 69);
         assertNotNull(User);
     }
 }
